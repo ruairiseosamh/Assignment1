@@ -29,15 +29,15 @@ public class StudentTest {
     @org.junit.jupiter.api.Test
     public void testGetUsername() {
         //System.out.println("getUsername");
-        List<String> courses = new ArrayList<String>();
-        List<String> modules = new ArrayList<String>();
+        List<String> courses = new ArrayList<>();
+        List<String> modules = new ArrayList<>();
         
         courses.add("CT4001");
         courses.add("EE345");
         
         modules.add("Software Engineering");
         modules.add("Machine Learning");
-        Student student = new Student("Rory", 21, "1/1/1998", 17360073, courses, modules); 
+        Student student = new Student("Rory", 21, "1/1/1998", 17360073); 
         String expResult = "Rory21";
         String result = student.getUsername();
         assertEquals(expResult, result);
