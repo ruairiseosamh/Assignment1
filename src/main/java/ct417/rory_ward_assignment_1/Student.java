@@ -12,17 +12,17 @@ public class Student {
     private int age;                  // Age
     private String dob;               // Date Of Birth
     private long id;                  // ID
-    private List<String> courses;     // courses
-    private List<String> modules;     // modules registered for
+    private List<Course> courses;     // courses
+    private List<Module> modules;     // modules registered for
     
     // construct a new student with given fields
-    public Student(String name, int age, String dob, long id, List courses, List modules) {
+    public Student(String name, int age, String dob, long id) {
         this.name  = name;
         this.age = age;
         this.dob = dob;
         this.id = id;
-        this.courses = courses;
-        this.modules = modules;
+        this.courses = new ArrayList<>();
+        this.modules = new ArrayList<>();
     }
     
     public void setName(String name) {
@@ -41,12 +41,18 @@ public class Student {
         this.id = id;
     }
 
-    public void setCourses(List courses) {
-        this.courses = courses;
+    public void addCourse(Course course) {
+        if(!this.courses.contains(course)){
+            this.courses.add(course);
+            course.addStudent(this);
+        }
     }
 
-    public void setModules(List modules) {
-        this.modules = modules;
+    public void addModule(Module module) {
+        if(!this.modules.contains(module)){
+            this.modules.add(module);
+            module.addStudent(this);
+        }  
     }
 
     public String getName() {
