@@ -8,7 +8,7 @@ package ct417.rory_ward_assignment_1;
 import java.util.*;
 import org.joda.time.DateTime;
 
-public class course_programme {
+public class Course {
     private String name;      // Name
     private List modules;     // modules 
     private List students;    // courses
@@ -16,10 +16,8 @@ public class course_programme {
     private DateTime end;     // end date
 
     // construct a new module with given fields
-    public course_programme(String name, List modules, List students, DateTime start, DateTime end) {
+    public Course(String name,  DateTime start, DateTime end) {
         this.name   = name;
-        this.modules = modules;
-        this.students = students;
         this.start = start;
         this.end = end;
     }
